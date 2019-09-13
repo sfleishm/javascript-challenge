@@ -14,6 +14,11 @@ data.forEach(function(ufo) {
         cell.text(value);
     });
 });
+
+
+// TREAD CAREFULLY THIS DIDN'T WORK 
+
+
 // console.log('hi');
 
 // function myFunction() {
