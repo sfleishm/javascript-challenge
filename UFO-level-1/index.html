@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <input class="form-control" id="datetime" onkeyup="myFunction()" type="text" placeholder="Hi There :^)">
                       </li>
                     </ul>
                   </div>
@@ -61,8 +62,67 @@
                   <th class="table-head">Comments</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody id="tbody"></tbody>
             </table>
+            <!-- OG Sript from w3schools -->
+            <!-- <script>
+            function myFunction() {
+              // Declare variables
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("datetime");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("ufo-table");
+              tr = table.getElementsByTagName("tbody").children;
+            
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+            </script> -->
+            <!-- Testing this one out below -->
+            <script>
+            function myFunction() {
+              // Declare variables
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("datetime");
+              filter = input.value;
+              table = document.getElementById("tbody");
+              tr = table.getElementsByTagName("tr");
+            
+              // Loop through all table rows, and hide those who don't match the search query
+              // Me trying to loop stuff
+              // for (i = 0; i <tr.length; i++) {
+              //   td = tr[i].getElementsByTagName("td")[0];
+              //   if (td === filter) {
+              //     tr[i].style.display = "";
+              //   } else {
+              //     tr[i].style.display = "none";
+              //   }
+              // }
+
+              // Code thats working sorta
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+            </script>
           </div>
         </div>
       </div>
